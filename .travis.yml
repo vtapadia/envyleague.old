@@ -4,7 +4,7 @@ jdk:
 
 addons:
   sonarcloud:
-    organization: "Varesh Tapadia"
+    organization: "vtapadia-github"
     token:
       secure: "UYx8XWdzKdrx4BjzosoLj8EXDZAMe1+K8Imxy9qI7pd9JvcsmZJ0sDL0WURx9pRYpSGseCPmLQeZU7IYegrv1PfcYfGklGpV8wH1BsZH69/n7FfCWwjwc8cwOGPX0jvNFmhBiGQlgu00p8oJRk/Af/gD0CbNzOH+ZGApVvl89OTBS2O+2HvmCDbib3SSYRfVX+QUAB0UazjXl4NNAwRQpJigL8S8BYVYbw2DP/J3WK4pCXUrAg5aDjFLmN/KnxvQcZOnTomrEGhbOqOAzwcc9LKqRDJEs7boZGGl8Qkc1NeubDj6i9pzW3Z3jVUPqiQ8d6PwkoK7YOCvqbdnVoXm8ODu+nm07c1pa1KKHfjiMvFTvKUA+CpxCbg7uwEGhld1WIrOamUZp68KUsVvYWGWdoiSmvPse7IqnqIsyHz9/4yiXkgs+pnhol58/hK/Ik+iul808r93KniyRKvsXSzYzDBQqV44hS6D3boRuSxRWjpF4h3rvlqu90YjGbkFNa0xCh4K8+SKFPckyapS6Fm5npbBxUGX12TSQ0KwtRECdeW6o7tWV2khpZylBcaScc5QlS5ncpMoY3BkccJwjmSgSSIeJFJ6nB7d1PBjIIPfkcG7VtQdmS2NMHcpUs5x3xJD2m8wQcpNEWC81Eu6BXVFn8EB805WSwmpY+uqAzi8S/4="
 
