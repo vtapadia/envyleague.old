@@ -18,6 +18,26 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+	<scm>
+        <connection>scm:git:git@github.com:vtapadia/envyleague.git</connection>
+        <developerConnection>scm:git:git@github.com:vtapadia/envyleague.git</developerConnection>
+		<url>git@github.com:vtapadia/envyleague.git</url>
+	</scm>
+
+	<ciManagement>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/vtapadia/envyleague</url>
+	</ciManagement>
+
+	<developers>
+		<developer>
+			<name>Varesh Tapadia</name>
+			<email>varesh.tapadia@gmail.com</email>
+			<url>http://vtapadia.github.io/</url>
+		</developer>
+	</developers>
+
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
