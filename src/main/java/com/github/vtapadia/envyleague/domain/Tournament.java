@@ -25,9 +25,11 @@ public class Tournament {
     private String name;
 
     @Enumerated(EnumType.STRING)
+    @NotNull
     private TournamentType type;
 
     @Enumerated(EnumType.STRING)
+    @NotNull
     private Status status;
 
     public String getName() {
