@@ -1,4 +1,4 @@
-package com.github.vtapadia.envyleague.rest;
+package com.github.vtapadia.envyleague.rest.v1;
 
 import com.github.vtapadia.envyleague.domain.Tournament;
 import com.github.vtapadia.envyleague.repository.TournamentRepository;
