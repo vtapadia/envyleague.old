@@ -15,7 +15,7 @@ public class TournamentTeam {
     @EmbeddedId
     private TournamentTeamKey tournamentTeamKey;
 
-    private String group;
+    private String teamGroup;
 
     private Integer points;
 
@@ -27,12 +27,12 @@ public class TournamentTeam {
         this.tournamentTeamKey = tournamentTeamKey;
     }
 
-    public String getGroup() {
-        return group;
+    public String getTeamGroup() {
+        return teamGroup;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setTeamGroup(String teamGroup) {
+        this.teamGroup = teamGroup;
     }
 
     public Integer getPoints() {
