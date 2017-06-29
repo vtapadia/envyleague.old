@@ -11,13 +11,13 @@ import javax.persistence.Table;
  */
 @Entity
 @Table
-public class TournamentTeams {
+public class TournamentTeam {
     @EmbeddedId
     private TournamentTeamKey tournamentTeamKey;
 
-//    private String group;
-//
-//    private Integer points;
+    private String group;
+
+    private Integer points;
 
     public TournamentTeamKey getTournamentTeamKey() {
         return tournamentTeamKey;
@@ -27,19 +27,19 @@ public class TournamentTeams {
         this.tournamentTeamKey = tournamentTeamKey;
     }
 
-//    public String getGroup() {
-//        return group;
-//    }
-//
-//    public void setGroup(String group) {
-//        this.group = group;
-//    }
-//
-//    public Integer getPoints() {
-//        return points;
-//    }
-//
-//    public void setPoints(Integer points) {
-//        this.points = points;
-//    }
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public Integer getPoints() {
+        return points;
+    }
+
+    public void setPoints(Integer points) {
+        this.points = points;
+    }
 }

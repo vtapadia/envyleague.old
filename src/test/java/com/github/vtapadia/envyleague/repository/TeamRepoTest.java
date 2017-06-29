@@ -18,13 +18,13 @@ import static org.junit.Assert.assertNull;
  */
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class TeamRepositoryTest {
+public class TeamRepoTest {
 
     @Autowired
     private TestEntityManager entityManager;
 
     @Autowired
-    private TeamRepository teamRepository;
+    private TeamRepo teamRepo;
 
     @Test
     public void teamRepository() {
@@ -33,7 +33,7 @@ public class TeamRepositoryTest {
         t.setName(name);
         t.setImage(null);
         entityManager.persist(t);
-        final Team team = teamRepository.findOne(name);
+        final Team team = teamRepo.findOne(name);
         assertNotNull(team);
         assertNull("Status not persisted", team.getImage());
     }

@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
  * Team Repository interface
  */
 @Repository
-public interface TeamRepository extends JpaRepository<Team, String> {
+public interface TeamRepo extends JpaRepository<Team, String> {
 
 }

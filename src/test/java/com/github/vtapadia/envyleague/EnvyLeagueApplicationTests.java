@@ -5,8 +5,8 @@ import com.github.vtapadia.envyleague.domain.Tournament;
 import com.github.vtapadia.envyleague.domain.enums.Roles;
 import com.github.vtapadia.envyleague.domain.enums.Status;
 import com.github.vtapadia.envyleague.domain.enums.TournamentType;
-import com.github.vtapadia.envyleague.repository.AppUserRepository;
-import com.github.vtapadia.envyleague.repository.TournamentRepository;
+import com.github.vtapadia.envyleague.repository.AppUserRepo;
+import com.github.vtapadia.envyleague.repository.TournamentRepo;
 import com.google.common.collect.Sets;
 import org.junit.Assert;
 import org.junit.Before;
@@ -27,9 +27,9 @@ public class EnvyLeagueApplicationTests {
 	private TestRestTemplate restTemplate;
 
 	@Autowired
-	private TournamentRepository tournamentRepository;
+	private TournamentRepo tournamentRepo;
 	@Autowired
-    private AppUserRepository appUserRepository;
+    private AppUserRepo appUserRepo;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -42,17 +42,17 @@ public class EnvyLeagueApplicationTests {
         user.setPassword(passwordEncoder.encode("password"));
         user.setActivated(true);
         user.setRoles(Sets.newHashSet(Roles.ADMIN));
-        appUserRepository.saveAndFlush(user);
+        appUserRepo.saveAndFlush(user);
 		Tournament t1 = new Tournament();
 		t1.setName("t1");
 		t1.setType(TournamentType.FOOTBALL);
 		t1.setStatus(Status.ACTIVE);
-		tournamentRepository.saveAndFlush(t1);
+		tournamentRepo.saveAndFlush(t1);
 		Tournament t2 = new Tournament();
 		t2.setName("t1");
 		t2.setType(TournamentType.FOOTBALL);
 		t2.setStatus(Status.ACTIVE);
-		tournamentRepository.saveAndFlush(t2);
+		tournamentRepo.saveAndFlush(t2);
 	}
 
     /**

@@ -1,7 +1,7 @@
 package com.github.vtapadia.envyleague.rest.v1;
 
 import com.github.vtapadia.envyleague.domain.Tournament;
-import com.github.vtapadia.envyleague.repository.TournamentRepository;
+import com.github.vtapadia.envyleague.repository.TournamentRepo;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -24,7 +24,7 @@ import java.util.Optional;
 public class TournamentController {
 
     @Autowired
-    private TournamentRepository tournamentRepository;
+    private TournamentRepo tournamentRepo;
 
     @RequestMapping(
             method = RequestMethod.GET,
@@ -33,10 +33,10 @@ public class TournamentController {
     public ResponseEntity<?> getAllTournaments(@RequestParam(required = false) String name) {
         return Optional
                 .ofNullable(name)
-                .map(tournamentRepository::findOne)
+                .map(tournamentRepo::findOne)
                 .map(Lists::newArrayList)
                 .map(ResponseEntity::ok)
-                .orElse(Optional.ofNullable(tournamentRepository.findAll()).map(Lists::newArrayList).map(ResponseEntity::ok)
+                .orElse(Optional.ofNullable(tournamentRepo.findAll()).map(Lists::newArrayList).map(ResponseEntity::ok)
                         .orElse(ResponseEntity.noContent().build()));
     }
 
@@ -48,7 +48,7 @@ public class TournamentController {
     public ResponseEntity<?> addTournament(@Validated @RequestBody Tournament tournament) {
         return Optional
                 .ofNullable(tournament)
-                .map(tournamentRepository::save)
+                .map(tournamentRepo::save)
                 .map(t -> ResponseEntity.created(ServletUriComponentsBuilder.fromCurrentContextPath().queryParam("name", tournament.getName()).build().toUri()).build())
                 .orElse(ResponseEntity.badRequest().build());
     }

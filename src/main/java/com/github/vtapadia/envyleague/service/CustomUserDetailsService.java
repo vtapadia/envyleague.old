@@ -1,7 +1,7 @@
 package com.github.vtapadia.envyleague.service;
 
 import com.github.vtapadia.envyleague.domain.AppUser;
-import com.github.vtapadia.envyleague.repository.AppUserRepository;
+import com.github.vtapadia.envyleague.repository.AppUserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -20,11 +20,11 @@ import java.util.stream.Collectors;
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private AppUserRepository appUserRepository;
+    private AppUserRepo appUserRepo;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        final AppUser appUser = appUserRepository.findOne(username);
+        final AppUser appUser = appUserRepo.findOne(username);
         if (appUser != null) {
             final List<SimpleGrantedAuthority> authorities = appUser.getRoles().stream().map(Enum::name).map(SimpleGrantedAuthority::new).collect(Collectors.toList());
             return new User(appUser.getLogin(), appUser.getPassword(), authorities);

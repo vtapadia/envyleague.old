@@ -14,12 +14,12 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class TournamentRepositoryTest {
+public class TournamentRepoTest {
     @Autowired
     private TestEntityManager entityManager;
 
     @Autowired
-    private TournamentRepository tournamentRepository;
+    private TournamentRepo tournamentRepo;
 
     @Test
     public void testPersistence() {
@@ -29,7 +29,7 @@ public class TournamentRepositoryTest {
         t.setStatus(Status.ACTIVE);
         t.setType(TournamentType.FOOTBALL);
         entityManager.persist(t);
-        final Tournament tournament = tournamentRepository.findOne(name);
+        final Tournament tournament = tournamentRepo.findOne(name);
         assertNotNull(tournament);
         assertEquals("Status not persisted", Status.ACTIVE, tournament.getStatus());
         assertEquals("Type not persisted", TournamentType.FOOTBALL, tournament.getType());

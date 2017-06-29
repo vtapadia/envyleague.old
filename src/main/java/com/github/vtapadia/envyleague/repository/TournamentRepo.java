@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
  * Tournament Repository
  */
 @Repository
-public interface TournamentRepository extends JpaRepository<Tournament, String> {
+public interface TournamentRepo extends JpaRepository<Tournament, String> {
 
 }
