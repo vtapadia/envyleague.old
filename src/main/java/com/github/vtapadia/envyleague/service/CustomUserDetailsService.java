@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -26,8 +25,9 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         final AppUser appUser = appUserRepo.findOne(username);
         if (appUser != null) {
-            final List<SimpleGrantedAuthority> authorities = appUser.getRoles().stream().map(Enum::name).map(SimpleGrantedAuthority::new).collect(Collectors.toList());
-            return new User(appUser.getLogin(), appUser.getPassword(), authorities);
+
+            return new User(appUser.getLogin(), appUser.getPassword(),
+                    appUser.getRoles().stream().map(Enum::name).map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
         } else {
             throw new UsernameNotFoundException("User " + username + " was not found in the database");
         }
